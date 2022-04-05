@@ -45,14 +45,16 @@ namespace Assign7
             this.Load = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.GoalsSort = new System.Windows.Forms.RadioButton();
+            this.JerseySort = new System.Windows.Forms.RadioButton();
+            this.NameSort = new System.Windows.Forms.RadioButton();
             this.ReverseSort = new System.Windows.Forms.CheckBox();
             this.SortButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -178,27 +180,32 @@ namespace Assign7
             // Save
             // 
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(224, 26);
+            this.Save.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.Save.Size = new System.Drawing.Size(234, 26);
             this.Save.Text = "Save Roster";
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // Load
             // 
             this.Load.Name = "Load";
-            this.Load.Size = new System.Drawing.Size(224, 26);
+            this.Load.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.Load.Size = new System.Drawing.Size(234, 26);
             this.Load.Text = "Load Roster";
+            this.Load.Click += new System.EventHandler(this.Load_Click);
             // 
             // Exit
             // 
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(224, 26);
+            this.Exit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
+            this.Exit.Size = new System.Drawing.Size(234, 26);
             this.Exit.Text = "Exit Program";
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.GoalsSort);
+            this.groupBox2.Controls.Add(this.JerseySort);
+            this.groupBox2.Controls.Add(this.NameSort);
             this.groupBox2.Location = new System.Drawing.Point(13, 31);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(363, 58);
@@ -206,38 +213,41 @@ namespace Assign7
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order By";
             // 
-            // radioButton3
+            // GoalsSort
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(275, 26);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(67, 24);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Goals";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.GoalsSort.AutoSize = true;
+            this.GoalsSort.Location = new System.Drawing.Point(275, 26);
+            this.GoalsSort.Name = "GoalsSort";
+            this.GoalsSort.Size = new System.Drawing.Size(67, 24);
+            this.GoalsSort.TabIndex = 2;
+            this.GoalsSort.TabStop = true;
+            this.GoalsSort.Text = "Goals";
+            this.GoalsSort.UseVisualStyleBackColor = true;
+            this.GoalsSort.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // radioButton2
+            // JerseySort
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(137, 26);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(69, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Jersey";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.JerseySort.AutoSize = true;
+            this.JerseySort.Location = new System.Drawing.Point(137, 26);
+            this.JerseySort.Name = "JerseySort";
+            this.JerseySort.Size = new System.Drawing.Size(69, 24);
+            this.JerseySort.TabIndex = 1;
+            this.JerseySort.TabStop = true;
+            this.JerseySort.Text = "Jersey";
+            this.JerseySort.UseVisualStyleBackColor = true;
+            this.JerseySort.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // NameSort
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 26);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(70, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Name";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.NameSort.AutoSize = true;
+            this.NameSort.Location = new System.Drawing.Point(6, 26);
+            this.NameSort.Name = "NameSort";
+            this.NameSort.Size = new System.Drawing.Size(70, 24);
+            this.NameSort.TabIndex = 0;
+            this.NameSort.TabStop = true;
+            this.NameSort.Text = "Name";
+            this.NameSort.UseVisualStyleBackColor = true;
+            this.NameSort.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // ReverseSort
             // 
@@ -257,6 +267,7 @@ namespace Assign7
             this.SortButton.TabIndex = 5;
             this.SortButton.Text = "Sort";
             this.SortButton.UseVisualStyleBackColor = true;
+            this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
             // 
             // label4
             // 
@@ -284,6 +295,10 @@ namespace Assign7
             this.label6.Size = new System.Drawing.Size(46, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "Goals";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -331,14 +346,16 @@ namespace Assign7
         private System.Windows.Forms.ToolStripMenuItem Load;
         private System.Windows.Forms.ToolStripMenuItem Exit;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton GoalsSort;
+        private System.Windows.Forms.RadioButton JerseySort;
+        private System.Windows.Forms.RadioButton NameSort;
         private System.Windows.Forms.CheckBox ReverseSort;
         private System.Windows.Forms.Button SortButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
