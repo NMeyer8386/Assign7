@@ -181,7 +181,7 @@ namespace Assign7
             // 
             this.Save.Name = "Save";
             this.Save.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.Save.Size = new System.Drawing.Size(234, 26);
+            this.Save.Size = new System.Drawing.Size(230, 26);
             this.Save.Text = "Save Roster";
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
@@ -189,15 +189,15 @@ namespace Assign7
             // 
             this.Load.Name = "Load";
             this.Load.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.Load.Size = new System.Drawing.Size(234, 26);
+            this.Load.Size = new System.Drawing.Size(230, 26);
             this.Load.Text = "Load Roster";
             this.Load.Click += new System.EventHandler(this.Load_Click);
             // 
             // Exit
             // 
             this.Exit.Name = "Exit";
-            this.Exit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
-            this.Exit.Size = new System.Drawing.Size(234, 26);
+            this.Exit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.Exit.Size = new System.Drawing.Size(230, 26);
             this.Exit.Text = "Exit Program";
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 

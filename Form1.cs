@@ -223,8 +223,12 @@ namespace Assign7
             string fileName = openFileDialog1.FileName;
             FileStream inFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             BinaryFormatter bFormatter = new BinaryFormatter();
+            for (int i = 0; i < playerArray.Length; i++)    //clears array when loading
+            {
+                playerArray[i] = null;
+            }
 
-            while (inFile.Position < inFile.Length)
+            while (inFile.Position < inFile.Length)        //fills array with values from file
             {
                 playerArray[counter] = (Player)bFormatter.Deserialize(inFile);
                 counter++;
